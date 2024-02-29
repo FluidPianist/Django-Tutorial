@@ -1,0 +1,44 @@
+{# djlint:off H030 H020 H031 H023#}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Looney Basket</title>
+    <link rel="stylesheet" href="{% static 'styles/base.css' %}">
+  </head>
+  <body>
+    <div class="fixed-header">
+      <div class="container">
+        <nav>
+          <a href="{% url 'app_homepage' %}">Loony Basket</a>
+          <a href="{% url 'about_us' %}">About Us</a>
+          <a href="{% url 'services' %}">Services</a>
+          <a href="{% url 'contact_us' %}">Contact Us</a>          
+        </nav>
+      </div>
+    </div>
+    <main role="main" class="container">
+      <div class="row">
+        {% if messages %}
+          {% for msg in messages %}
+            <div class="alert alert-{{ msg.tags }}">
+              <p></p>
+              {{ msg }}
+            </div>
+          {% endfor %}
+        {% endif %}
+      </div>
+    </main>
+    <a></a>
+    <a></a>
+    <div class="container">
+      {% block content %}
+      {% endblock content %}
+    </div>
+    <div class="fixed-footer">
+      <div class="container">Copyright &copy; 2020 Loony Basket</div>
+    </div>
+  </body>
+</html>

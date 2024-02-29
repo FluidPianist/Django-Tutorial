@@ -1,0 +1,1 @@
+source /media/adeeb/DATA/Projects/PythonEnvironments/myenv/bin/activate
